@@ -55,15 +55,40 @@ public class RPSGame implements Game
      * Returns 1 or 2 based on how many players are playing RPS
      */
     public int determineNumberPlayers() {
-        return 0;
+        System.out.println("How many players: ");
+        numPlayers = scan.nextInt();
+        return numPlayers;
     }
     
     /**
      * Compare player values and return 1 for p1 win, 0 for tie & -1 for loss
      */
     public int comparePlayers(Player p1, Player p2) {
-        
-        return 0;
+        if(pOne.getChoice().equals(pTwo.getChoice())) {
+            //tie
+            return 0;
+        }
+        else if(pOne.getChoice().equals("rock") && pTwo.getChoice().equals("scissors")) {
+            return 1;
+        }
+        else if(pOne.getChoice().equals("rock") && pTwo.getChoice().equals("paper")) {
+            return 2;
+        }
+        else if(pOne.getChoice().equals("paper") && pTwo.getChoice().equals("scissors")) {
+            return 2;
+        }
+        else if(pOne.getChoice().equals("paper") && pTwo.getChoice().equals("rock")) {
+            return 1;
+        }
+        else if(pOne.getChoice().equals("scissors") && pTwo.getChoice().equals("rock")) {
+            return 2;
+        }
+        else if(pOne.getChoice().equals("scissors") && pTwo.getChoice().equals("paper")) {
+            return 1;
+        }
+        else {
+            return 0;
+        }
     }
     
     /**
